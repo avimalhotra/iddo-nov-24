@@ -7,10 +7,13 @@ button{cursor:pointer;padding:0;}
 .flex{display:flex;}
 .align-center{align-items:center;}
 .justify-space-bet{justify-content:space-between;}
+.row.gy-4{ row-gap: 4rem;}
+
 @font-face{font-family:proxima;src:url(../fonts/ProximaNova-Bold.woff2);font-weight:700;font-display:swap;}
 @font-face{font-family:proxima;src:url(../fonts/ProximaNova-Regular.woff2);font-weight:400;font-display:swap;}
 @font-face{font-family:proxima;src:url(../fonts/ProximaNovaT-Thin.woff2);font-weight:100;font-display:swap;}
-html{font-size:15px;--ff:proxima,sans-serif;--red:#ca3c3c}
+
+html{font-size:15px;--ff:proxima,sans-serif; --red:#ca3c3c}
 body{font:16px/1.2 var(--ff);}
 
 .container{max-width:1200px;margin:auto;padding:0 1rem;}
@@ -29,18 +32,42 @@ body{font:16px/1.2 var(--ff);}
 .col-12{grid-column:span 12;}
 
 
+/* custom */
 header{background:#000;color:#fff;}
 header h1{font-size:30px}
 header h1 a{color:inherit;line-height:80px;display:inline-block}
 nav{margin-left:-20px;}
 nav li{margin:0 5px;}
-nav a{color:inherit;display:block;line-height:80px;padding:0 15px}
+nav a{color:inherit;display:block;line-height:80px;padding:0 1rem;}
 .btn{color:var(--red);background:none;font:16px var(--ff);width:90px;height:35px;border:2px solid;border-radius:10px}
 .menu{ display: none;}
 .menu span{ display: block; height: 2px; background: var(--red); margin: 6px 12px; }
 
 
-@media screen and (max-width:1220px){html{font-size:14px}}
+.banner{ background: #666; color: #fff; padding: 15rem 0; }
+.banner p{ font-size: 4rem; font-weight: 100;}
+.banner a{ color: var(--red);}
+.banner button{ border: none; background:none; color: #fff; font-size: 10rem; margin-right: 40px; margin-bottom: 20px;}
+
+
+.wrap-3{ background: var(--red); color: #fff; padding: 50px 0;}
+h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
+.circle{ width: 100px; height: 100px; border: 2px solid; border-radius: 50%; display: grid; place-items: center; font-size: 36px; margin-right: 2rem;}
+.wrap-3 h3{ font-size: 16px; line-height: 30px;}
+.wrap-3 p{ font-size: 14px; font-weight: 100; line-height: 22px; }
+
+
+.wrap-4{ background: #fff; color: var(--red); font-size: 36px; text-align: center; line-height: 10rem; }
+
+
+
+
+
+/* responsive */
+@media screen and (max-width:1220px){
+    html{font-size:14px;}
+    h2{ font-size: 62px;}
+}
 
 @media screen and (max-width:980px){
     .col-t-1{grid-column:span 1}
@@ -55,6 +82,7 @@ nav a{color:inherit;display:block;line-height:80px;padding:0 15px}
     .col-t-10{grid-column:span 10}
     .col-t-11{grid-column:span 11}
     .col-t-12{grid-column:span 12}}
+    .banner p{ font-size: 3rem;}
 
 @media screen and (max-width:767px){
     html{font-size:13px}
@@ -72,10 +100,12 @@ nav a{color:inherit;display:block;line-height:80px;padding:0 15px}
     .col-m-12{grid-column:span 12}
     .collapse{ display: none;}
     .menu{ display: inline-block; position: absolute; right: 1rem; top: 20px;}
+    .banner p{ font-size: 2rem;}
 }
 
 @media screen and (max-width:480px){
     .col-p-4{grid-column:span 4}
     .col-p-6{grid-column:span 6}
     .col-p-12{grid-column:span 12}
+    .banner .flex{ flex-flow: column; }
 }
