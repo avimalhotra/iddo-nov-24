@@ -13,7 +13,7 @@ button{cursor:pointer;padding:0;}
 @font-face{font-family:proxima;src:url(../fonts/ProximaNova-Regular.woff2);font-weight:400;font-display:swap;}
 @font-face{font-family:proxima;src:url(../fonts/ProximaNovaT-Thin.woff2);font-weight:100;font-display:swap;}
 
-html{font-size:15px;--ff:proxima,sans-serif; --red:#ca3c3c}
+html{font-size:15px;--ff:proxima,sans-serif; --red:#ca3c3c; scroll-behavior: smooth; scroll-padding-top: 80px;}
 body{font:16px/1.2 var(--ff);}
 
 .container{max-width:1200px;margin:auto;padding:0 1rem;}
@@ -30,10 +30,11 @@ body{font:16px/1.2 var(--ff);}
 .col-10{grid-column:span 10;}
 .col-11{grid-column:span 11;}
 .col-12{grid-column:span 12;}
+.img-resp{ max-width: 100%; height: auto;}
 
 
 /* custom */
-header{background:#000;color:#fff;}
+header{background:#000;color:#fff; position: sticky; top: 0; z-index: 1;}
 header h1{font-size:30px}
 header h1 a{color:inherit;line-height:80px;display:inline-block}
 nav{margin-left:-20px;}
@@ -51,7 +52,7 @@ nav a{color:inherit;display:block;line-height:80px;padding:0 1rem;}
 
 
 .wrap-3{ background: var(--red); color: #fff; padding: 50px 0;}
-h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
+h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom: 2rem;}
 .circle{ width: 100px; height: 100px; border: 2px solid; border-radius: 50%; display: grid; place-items: center; font-size: 36px; margin-right: 2rem;}
 .wrap-3 h3{ font-size: 16px; line-height: 30px;}
 .wrap-3 p{ font-size: 14px; font-weight: 100; line-height: 22px; }
@@ -60,7 +61,39 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
 .wrap-4{ background: #fff; color: var(--red); font-size: 36px; text-align: center; line-height: 10rem; }
 
 
+.wrap-5{ padding: 100px 0; color: #363636; background: #ebebeb;}
+.wrap-5 .btn{ margin: 0 10px 4rem 0; }
+.wrap-5 .btn.active{ background: var(--red); color: #fff; border-color: var(--red);}
+.work{ position: relative; text-align: center; overflow: hidden; }
+.work .over{ position: absolute; background: #fff; left: 0;  right: 0; bottom: -50px; padding: 20px 0; opacity: 0; transition: 400ms; }
+.over h3{ font-size: 18px; color: var(--red); line-height: 40px;}
+.over p{ font-size: 14px; font-weight: 100; color:#898989; line-height: 20px;}
+.work:hover .over{  opacity: 1; bottom: 0; }
+.more{ border: none; background: none; color: var(--red); font-size: 36px; margin-top: 2rem; }
 
+
+.wrap-6{ background: #666; color: #fff; padding: 50px 0 30px; text-align: center; }
+/* .reviews{  } */
+.reviews .review{ display: none; }
+.reviews .review.active{ display: block }
+.reviews .review b{ display: block; margin-top: 10px;}
+.reviews .review p{ font: 100 36px/41px var(--ff); margin-bottom: 1rem; }
+.pager{ list-style: none; padding: 0; justify-content: center; margin-top: 2rem; }
+.pager li{ margin: 5px; }
+.pager a{ display: block; width: 10px; height: 10px; border: 2px solid #fff; border-radius: 50%;  }
+.pager a.active{ background: #fff; }
+
+
+
+.wrap-7{ padding: 100px 0; color: #363636; background: #fff;}
+.team{position: relative;}
+.social{ position: absolute; left: 140px; top: 60px; }
+.social li:not(:last-child){ margin-right: 10px;}
+.social a{ display: block; border-radius: 50%; background: var(--red); color: #fff; width: 50px; line-height: 50px; text-align: center; font-size: 24px;}
+.gap{ margin: 50px 0 0 100px;}
+.team h3{ font-size: 18px; color: var(--red); margin-bottom: 8px; }
+.team small{ font-size: 14px; font-weight: 100; color: #898989; }
+.team p{ font: 100 14px/22px var(--ff); color: #363636; margin-top: 22px; }
 
 
 /* responsive */
@@ -81,8 +114,13 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
     .col-t-9{grid-column:span 9}
     .col-t-10{grid-column:span 10}
     .col-t-11{grid-column:span 11}
-    .col-t-12{grid-column:span 12}}
+    .col-t-12{grid-column:span 12}
     .banner p{ font-size: 3rem;}
+    .social{ left: auto; right: 0; top: 0; }
+    .social ul{ flex-flow: column;}
+    .wrap-7 .social li{ margin: 0; margin-bottom: 10px; }
+    .gap{ margin-left: 50px;}
+}
 
 @media screen and (max-width:767px){
     html{font-size:13px}
@@ -101,6 +139,7 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid;}
     .collapse{ display: none;}
     .menu{ display: inline-block; position: absolute; right: 1rem; top: 20px;}
     .banner p{ font-size: 2rem;}
+    .wrap-5 .btn{ margin-right: 6px; }
 }
 
 @media screen and (max-width:480px){
