@@ -4,6 +4,7 @@ label{display:block;}
 img{vertical-align:bottom;}
 ul{list-style:none;padding:0;}
 button{cursor:pointer;padding:0;}
+iframe{ border: none;}
 .flex{display:flex;}
 .align-center{align-items:center;}
 .justify-space-bet{justify-content:space-between;}
@@ -52,7 +53,7 @@ nav a{color:inherit;display:block;line-height:80px;padding:0 1rem;}
 
 .banner{ background: #666; color: #fff; padding: 15rem 0; }
 .banner p{ font-size: 4rem; font-weight: 100;}
-.banner a{ color: var(--red);}
+.banner a{ color: #fff;}
 .banner button{ border: none; background:none; color: #fff; font-size: 10rem; margin-right: 40px; margin-bottom: 20px;}
 
 
@@ -81,14 +82,19 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 
 .wrap-6{ background: #666; color: #fff; padding: 50px 0 30px; text-align: center; }
 /* .reviews{  } */
-.reviews .review{ display: none; }
-.reviews .review.active{ display: block }
+/* .reviews .review{ display: none; }
+.reviews .review.active{ display: block } */
 .reviews .review b{ display: block; margin-top: 10px;}
 .reviews .review p{ font: 100 36px/41px var(--ff); margin-bottom: 1rem; }
-.pager{ list-style: none; padding: 0; justify-content: center; margin-top: 2rem; }
+/* .pager{ list-style: none; padding: 0; justify-content: center; margin-top: 2rem; }
 .pager li{ margin: 5px; }
 .pager a{ display: block; width: 10px; height: 10px; border: 2px solid #fff; border-radius: 50%;  }
-.pager a.active{ background: #fff; }
+.pager a.active{ background: #fff; } */
+
+.wrap-6 .bx-wrapper{ background: none; border: none; box-shadow: 0 0; }
+.wrap-6 .bx-wrapper img{ margin: auto;}
+.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a{ border: 2px solid #fff;}
+.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a.active,.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a:focus,.wrap-6 .bx-wrapper .bx-pager.bx-default-pager a:hover{ background: #fff;}
 
 
 
@@ -163,6 +169,15 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
 .top{ background: none; color: var(--red); font-size: 24px; border: none; }
 
 
+.form{ display: none;}
+.overlay{ position: fixed; inset: 0; background: #000a; z-index: 2; }
+.popover{ position: fixed; left: 50%; transform: translateX(-50%); top: 100px; background: #fff; z-index: 3; padding: 2rem; border-radius: 10px; }
+.popover label{ display: block; margin: 1rem 0;}
+.popover label input{ float: right; margin-left: 1rem;}
+.close{ position: absolute; right: 10px; top: 10px; background: none; border: none; color: var(--red);}
+
+
+
 /* responsive */
 @media screen and (max-width:1220px){
     html{font-size:14px;}
@@ -211,6 +226,7 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
     .collapse .flex{ flex-flow: column;}
     nav{ width: 100%; text-align: right;}
     nav a{ line-height: 40px;}
+    .popover{ top: 0;}
 }
 
 @media screen and (max-width:480px){
@@ -219,5 +235,6 @@ h2{ font-size: 72px; line-height: 60px; border-bottom: 10px solid; margin-bottom
     .col-p-12{grid-column:span 12}
     .banner .flex{ flex-flow: column; }
     .wrap-10 input{ width: 240px; font-size: 24px;}
-    
+    .popover{ position: absolute; top: 100px; left: 0; right: 0;  aspect-ratio: 16/9; transform: translateX(0); }
+    .popover iframe{ max-width: 100%; height: auto;}
 }

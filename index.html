@@ -6,6 +6,7 @@
     <title>IDDO</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
 </head>
 <body id="home">
     <header>
@@ -206,7 +207,7 @@
                 <div class="col-2"></div>
                 <div class="col-8 col-t-12">
                    <div class="reviews">
-                        <div class="review active">
+                        <div class="review">
                             <blockquote>
                                 <p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.”</p>
                                 <footer>
@@ -215,13 +216,29 @@
                                 </footer>
                             </blockquote>
                         </div>
-                        <div class="review">2</div>
-                        <div class="review">3</div>
-                        <ol class="pager flex">
+                        <div class="review">
+                            <blockquote>
+                                <p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.”</p>
+                                <footer>
+                                    <img src="img/jack.webp" alt="jack" width="70" height="70" loading="lazy">
+                                    <b>JACK EFRON</b>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="review">
+                            <blockquote>
+                                <p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.”</p>
+                                <footer>
+                                    <img src="img/jack.webp" alt="jack" width="70" height="70" loading="lazy">
+                                    <b>JACK EFRON</b>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <!-- <ol class="pager flex">
                             <li><a href="" class="active"></a></li>
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
-                        </ol>
+                        </ol> -->
                    </div>
                 </div>
                 <div class="col-2"></div>
@@ -481,65 +498,19 @@
             <button class="top"><span class="fa fa-chevron-up"></span></button>
         </div>
     </footer>
+
+    <div class="form">
+        <button class="close fa fa-times" aria-label="Close"></button>
+        <form>
+            <label>Name: <input type="text" required></label>
+            <label>Email: <input type="email" required></label>
+            <label>Password: <input type="password" required></label>
+            <button class="btn">Signup</button>
+        </form>
+    </div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-$(function(){
-    $("#portfolio .btn").click(function(){
-        $("#portfolio .btn").removeClass("active");
-        $(this).addClass("active");
-
-        if( $(this).text()=="All" ){
-            $(".all").fadeIn();
-        }
-        else if( $(this).text()=="Website" ){
-            $(".all").fadeOut(0);
-            $(".all.website").fadeIn();
-        }
-        else{
-            $(".all").fadeOut(0);
-            $(".all.brand").fadeIn();
-        }
-    });
-
-    $("#portfolio .more").click(function(){
-        $(this).children().toggleClass("fa-minus-circle");
-        $(".all:nth-child(7),.all:nth-child(8),.all:nth-child(9)").slideToggle();
-    });
-
-    $("#about .more").click(function(){
-        $(this).children().toggleClass("fa-minus-circle");
-         $(".teamcol:nth-child(4),.teamcol:nth-child(5),.teamcol:nth-child(6)").slideToggle();
-    });
-
-
-    $(".accordion a").click(function(e){
-        e.preventDefault();
-        $(".accordion a").removeClass("active");
-        $(this).addClass("active");
-        $(".accordion p").slideUp();
-        $(this).next("p").slideDown();
-    });
-
-    $(".top").click(function(){
-        $("html,body").animate({scrollTop:0},1000);
-    });
-
-    $(".menu").click(function(){
-        $(this).toggleClass("active");
-        $(".collapse").slideToggle();
-    })
-
-
-
-
-    if(screen.width<768){
-        $("nav a").click(function(){
-            $(".collapse").slideUp();
-            $(".menu").removeClass("active");
-        })
-    }
-
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>
